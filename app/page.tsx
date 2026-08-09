@@ -10,21 +10,27 @@ export default function Home() {
         {/* ── Hero ── */}
         <section
           id="home"
-          className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+          className="relative bg-forest flex flex-col"
+          style={{ minHeight: "100svh" }}
         >
-          <div className="absolute inset-0 bg-forest">
+          {/* Image: full-width on mobile, height-locked to viewport on desktop */}
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
             <Image
               src="/katie-and-anna/couple.jpeg"
               alt="Katie and Anna"
-              fill
+              width={5304}
+              height={7952}
               priority
-              className="object-contain"
-              sizes="100vw"
+              className="w-full h-auto sm:h-full sm:w-auto flex-shrink-0"
+              sizes="(max-width: 640px) 100vw, 45vw"
             />
-            <div className="absolute inset-0 bg-forest/40" />
+            <div className="absolute inset-0 bg-forest/45" />
           </div>
 
-          <div className="relative z-10 flex flex-col items-center text-center px-6 py-24">
+          <div
+            className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-24"
+            style={{ minHeight: "100svh" }}
+          >
             <p className="text-sage-light/80 tracking-[0.35em] uppercase text-xs font-light mb-6">
               Together with their families
             </p>
