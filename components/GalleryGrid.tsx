@@ -3,19 +3,19 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 
-// Desktop (sm: 3-col): pairs of large landscape (col-span-2) + portrait accent (col-span-1)
-// Mobile (2-col): all col-span-2 = full-width stack, no orphaned gaps
+// All landscape photos use aspect-[4/3], all portrait accents use aspect-[2/3].
+// This makes every row identical height: (2W/3)×(3/4) = (W/3)×(3/2) = W/2.
 const photos = [
-  { src: "/bench.jpg",     alt: "Katie and Anna on a park bench",          aspect: "aspect-[3/2]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[3/4]",  cols: "col-span-2 sm:col-span-1" },
+  { src: "/bench.jpg",     alt: "Katie and Anna on a park bench",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
+  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/landscape.jpg", alt: "Katie and Anna in the mountains",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[3/4]",  cols: "col-span-2 sm:col-span-1" },
+  { src: "/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/holiday.jpg",   alt: "Katie and Anna at a holiday event",        aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[3/4]",  cols: "col-span-2 sm:col-span-1" },
+  { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
   { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
-  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[16/9]", cols: "col-span-2 sm:col-span-2" },
+  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
 ];
 
 export default function GalleryGrid() {
