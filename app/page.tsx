@@ -83,27 +83,25 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 gap-12 items-start">
               <div className="space-y-5 text-bark/75 font-light leading-relaxed text-[15px]">
                 <p>
-                  Some love stories begin with grand gestures. Ours started
-                  somewhere quieter — a conversation that stretched too long,
-                  in the best possible way, and neither of us wanted to be the
-                  one to end it first.
+                  In 2019, they were both first-year students in the Johns
+                  Hopkins Master of Public Health program. Anna asked Katie for
+                  her number — officially, to start a group chat. It was not
+                  for a group chat.
                 </p>
                 <p>
-                  We&apos;ve spent the years since building a life that feels
-                  like home: slow mornings, ambitious plans, bad jokes, and an
-                  embarrassing number of opinions about coffee.
+                  Nights out at The Crown and long conversations at Leon&apos;s
+                  confirmed what was already becoming obvious: neither of them
+                  wanted to go home.
                 </p>
               </div>
               <div className="space-y-5 text-bark/75 font-light leading-relaxed text-[15px]">
                 <p>
-                  When the question was finally asked — in the most perfectly
-                  imperfect way — the answer was obvious before it was even
-                  finished. Of course. Always.
+                  Six years later, they&apos;ve shared five apartments across
+                  four cities and filled a passport together — Japan, Turkey,
+                  Morocco, England, Germany, and counting.
                 </p>
                 <p>
-                  Now we&apos;re asking you to be there when we make it
-                  official, and to help us celebrate the beginning of whatever
-                  comes next.
+                  Now they&apos;re asking you to be there for what comes next.
                 </p>
               </div>
             </div>
