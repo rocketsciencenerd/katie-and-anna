@@ -12,16 +12,16 @@ export default function Home() {
           id="home"
           className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
         >
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-forest">
             <Image
               src="/katie-and-anna/couple.jpeg"
               alt="Katie and Anna"
               fill
               priority
-              className="object-cover object-top"
+              className="object-contain"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-forest/55" />
+            <div className="absolute inset-0 bg-forest/40" />
           </div>
 
           <div className="relative z-10 flex flex-col items-center text-center px-6 py-24">
@@ -144,12 +144,12 @@ export default function Home() {
               </div>
 
               {/* Bottom row: hero photo, full width */}
-              <div className="col-span-2 sm:col-span-3 relative aspect-[21/9] overflow-hidden">
+              <div className="col-span-2 sm:col-span-3 relative aspect-[21/9] overflow-hidden bg-forest">
                 <Image
                   src="/katie-and-anna/couple.jpeg"
                   alt="Katie and Anna outside City Hall"
                   fill
-                  className="object-cover object-top hover:scale-[1.02] transition-transform duration-700"
+                  className="object-contain hover:scale-[1.02] transition-transform duration-700"
                   sizes="100vw"
                 />
               </div>
