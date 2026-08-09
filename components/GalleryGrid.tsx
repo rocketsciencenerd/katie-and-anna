@@ -3,19 +3,21 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 
-// All landscape photos use aspect-[4/3], all portrait accents use aspect-[2/3].
-// This makes every row identical height: (2W/3)×(3/4) = (W/3)×(3/2) = W/2.
+// Fixed row height (not aspect-ratio) guarantees every row is exactly the same height
+// regardless of col-span, eliminating all spacing inconsistencies.
+// Desktop (sm: 3-col): alternating L+P / P+L each row.
+// Mobile (2-col): all col-span-2 → full-width stack.
 const photos = [
-  { src: "/bench.jpg",     alt: "Katie and Anna on a park bench",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
-  { src: "/landscape.jpg", alt: "Katie and Anna in the mountains",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
-  { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
-  { src: "/holiday.jpg",   alt: "Katie and Anna at a holiday event",        aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
-  { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
-  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
+  { src: "/bench.jpg",     alt: "Katie and Anna on a park bench",          cols: "col-span-2 sm:col-span-2" }, // row 1 — landscape left
+  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    cols: "col-span-2 sm:col-span-1" }, // row 1 — portrait right
+  { src: "/garden.jpg",    alt: "Anna in the garden",                       cols: "col-span-2 sm:col-span-1" }, // row 2 — portrait left
+  { src: "/landscape.jpg", alt: "Katie and Anna in the mountains",          cols: "col-span-2 sm:col-span-2" }, // row 2 — landscape right
+  { src: "/holiday.jpg",   alt: "Katie and Anna at a holiday event",        cols: "col-span-2 sm:col-span-2" }, // row 3 — landscape left
+  { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         cols: "col-span-2 sm:col-span-1" }, // row 3 — portrait right
+  { src: "/park.jpg",      alt: "Katie and Anna in the park",               cols: "col-span-2 sm:col-span-1" }, // row 4 — portrait left
+  { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 cols: "col-span-2 sm:col-span-2" }, // row 4 — landscape right
+  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       cols: "col-span-2 sm:col-span-2" }, // row 5 — landscape left
+  { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     cols: "col-span-2 sm:col-span-1" }, // row 5 — portrait right
 ];
 
 export default function GalleryGrid() {
@@ -52,18 +54,14 @@ export default function GalleryGrid() {
           <button
             key={photo.src}
             onClick={() => setActive(i)}
-            className={`relative overflow-hidden cursor-zoom-in group ${photo.cols} ${photo.aspect}`}
+            className={`relative overflow-hidden cursor-zoom-in group h-[240px] sm:h-[340px] ${photo.cols}`}
           >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
               className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
-              sizes={
-                photo.cols.includes("col-span-3") ? "100vw" :
-                photo.cols.includes("col-span-2") ? "(max-width:640px) 100vw, 66vw" :
-                "(max-width:640px) 50vw, 33vw"
-              }
+              sizes="(max-width:640px) 100vw, 66vw"
             />
           </button>
         ))}
