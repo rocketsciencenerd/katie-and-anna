@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 
+// Create a free form at https://formspree.io and paste your form ID here.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 type FormState = "idle" | "loading" | "success" | "error";
 
 export default function RSVPForm() {
@@ -13,9 +16,9 @@ export default function RSVPForm() {
     setState("loading");
     const data = Object.fromEntries(new FormData(e.currentTarget));
     try {
-      const res = await fetch("/api/rsvp", {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Failed");
@@ -44,7 +47,6 @@ export default function RSVPForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Name */}
       <div>
         <label className={labelClass}>Full name</label>
         <input
@@ -56,7 +58,6 @@ export default function RSVPForm() {
         />
       </div>
 
-      {/* Email */}
       <div>
         <label className={labelClass}>Email</label>
         <input
@@ -68,7 +69,6 @@ export default function RSVPForm() {
         />
       </div>
 
-      {/* Attending */}
       <fieldset>
         <legend className={labelClass}>Will you attend?</legend>
         <div className="flex gap-4 mt-2">
@@ -95,7 +95,6 @@ export default function RSVPForm() {
         </div>
       </fieldset>
 
-      {/* Guest count — only shown if attending */}
       {attending === "yes" && (
         <>
           <div>
@@ -110,9 +109,7 @@ export default function RSVPForm() {
           </div>
 
           <div>
-            <label className={labelClass}>
-              Dietary restrictions or allergies
-            </label>
+            <label className={labelClass}>Dietary restrictions or allergies</label>
             <input
               name="dietary"
               type="text"
@@ -123,7 +120,6 @@ export default function RSVPForm() {
         </>
       )}
 
-      {/* Note */}
       <div>
         <label className={labelClass}>Anything else? (optional)</label>
         <textarea
