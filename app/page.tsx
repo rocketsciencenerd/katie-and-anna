@@ -114,20 +114,19 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <SectionLabel>Gallery</SectionLabel>
 
-            {/* Large + two small on left, tall on right */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {/* Full-width top on mobile, spans 2 cols on sm */}
+              {/* Row 1 left: bench */}
               <div className="col-span-2 sm:col-span-2 relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/katie-and-anna/bench.jpg"
-                  alt="Katie and Anna on a bench"
+                  alt="Katie and Anna on a park bench"
                   fill
                   className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
                   sizes="(max-width: 640px) 100vw, 66vw"
                 />
               </div>
 
-              {/* Tall right column — spans 2 rows on sm */}
+              {/* Right column: archway spans rows 1–2 */}
               <div className="col-span-1 row-span-1 sm:row-span-2 relative aspect-[3/4] sm:aspect-auto overflow-hidden">
                 <Image
                   src="/katie-and-anna/archway.jpg"
@@ -138,18 +137,29 @@ export default function Home() {
                 />
               </div>
 
-              {/* Bottom-left — wide */}
-              <div className="col-span-2 sm:col-span-2 relative aspect-[16/9] overflow-hidden">
+              {/* Row 2 left: landscape selfie */}
+              <div className="col-span-2 sm:col-span-2 relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/katie-and-anna/crosswalk.jpg"
-                  alt="Katie and Anna crossing the street"
+                  src="/katie-and-anna/landscape.jpg"
+                  alt="Katie and Anna in the mountains"
                   fill
                   className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
                   sizes="(max-width: 640px) 100vw, 66vw"
                 />
               </div>
 
-              {/* Bottom row: hero photo, full width */}
+              {/* Row 3: crosswalk, full width */}
+              <div className="col-span-2 sm:col-span-3 relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src="/katie-and-anna/crosswalk.jpg"
+                  alt="Katie and Anna crossing the street"
+                  fill
+                  className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
+                  sizes="100vw"
+                />
+              </div>
+
+              {/* Row 4: couple portrait, full width */}
               <div className="col-span-2 sm:col-span-3 relative aspect-[21/9] overflow-hidden bg-forest">
                 <Image
                   src="/katie-and-anna/couple.jpeg"
