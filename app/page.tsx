@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import RSVPForm from "@/components/RSVPForm";
+import GalleryGrid from "@/components/GalleryGrid";
 
 export default function Home() {
   return (
@@ -113,45 +114,7 @@ export default function Home() {
         <section id="gallery" className="pb-28 px-6">
           <div className="max-w-5xl mx-auto">
             <SectionLabel>Gallery</SectionLabel>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-
-              {/* bench (landscape) + bridge (portrait) */}
-              <GalleryCell src="/katie-and-anna/bench.jpg" alt="Katie and Anna on a park bench"
-                className="col-span-2 sm:col-span-2 aspect-[3/2]" sizes="(max-width:640px) 100vw, 66vw" />
-              <GalleryCell src="/katie-and-anna/bridge.jpg" alt="Katie and Anna on the Brooklyn Bridge"
-                className="col-span-1 aspect-[3/4] sm:aspect-[3/4]" sizes="(max-width:640px) 50vw, 33vw" />
-
-              {/* landscape selfie (landscape) + garden (portrait) */}
-              <GalleryCell src="/katie-and-anna/landscape.jpg" alt="Katie and Anna in the mountains"
-                className="col-span-2 sm:col-span-2 aspect-[4/3]" sizes="(max-width:640px) 100vw, 66vw" />
-              <GalleryCell src="/katie-and-anna/garden.jpg" alt="Anna in the garden"
-                className="col-span-1 aspect-[3/4]" sizes="(max-width:640px) 50vw, 33vw" />
-
-              {/* holiday (landscape) + archway (portrait) */}
-              <GalleryCell src="/katie-and-anna/holiday.jpg" alt="Katie and Anna at a holiday event"
-                className="col-span-2 sm:col-span-2 aspect-[4/3]" sizes="(max-width:640px) 100vw, 66vw" />
-              <GalleryCell src="/katie-and-anna/archway.jpg" alt="Katie and Anna under a stone archway"
-                className="col-span-1 aspect-[2/3]" sizes="(max-width:640px) 50vw, 33vw" />
-
-              {/* lake (landscape) + mountain screenshot (portrait) */}
-              <GalleryCell src="/katie-and-anna/lake.jpg" alt="Katie and Anna by a lake"
-                className="col-span-2 sm:col-span-2 aspect-[4/3]" sizes="(max-width:640px) 100vw, 66vw" />
-              <GalleryCell src="/katie-and-anna/mountain.png" alt="Katie and Anna in the mountains"
-                className="col-span-1 aspect-[1/2]" sizes="(max-width:640px) 50vw, 33vw" />
-
-              {/* crosswalk — full width */}
-              <GalleryCell src="/katie-and-anna/crosswalk.jpg" alt="Katie and Anna crossing the street"
-                className="col-span-2 sm:col-span-3 aspect-[16/9]" sizes="100vw" />
-
-              {/* couple portrait — full width with contain */}
-              <div className="col-span-2 sm:col-span-3 relative aspect-[21/9] overflow-hidden bg-forest">
-                <Image src="/katie-and-anna/couple.jpeg" alt="Katie and Anna outside City Hall"
-                  fill className="object-contain hover:scale-[1.02] transition-transform duration-700"
-                  sizes="100vw" />
-              </div>
-
-            </div>
+            <GalleryGrid />
           </div>
         </section>
 
@@ -280,16 +243,6 @@ export default function Home() {
         </footer>
       </main>
     </>
-  );
-}
-
-function GalleryCell({ src, alt, className, sizes }: { src: string; alt: string; className: string; sizes: string }) {
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <Image src={src} alt={alt} fill
-        className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
-        sizes={sizes} />
-    </div>
   );
 }
 
