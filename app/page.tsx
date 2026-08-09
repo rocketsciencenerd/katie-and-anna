@@ -28,7 +28,7 @@ export default function Home() {
           </div>
 
           <div
-            className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-24"
+            className="relative z-10 flex flex-col items-center justify-start text-center px-6 pt-28 pb-16"
             style={{ minHeight: "100svh" }}
           >
             <p className="text-sage-light/80 tracking-[0.35em] uppercase text-xs font-light mb-6">
