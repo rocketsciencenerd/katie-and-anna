@@ -100,76 +100,65 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
-            <div className="mt-16 relative aspect-[3/2] overflow-hidden max-w-xl mx-auto">
-              <Image
-                src="/katie-and-anna/couple.jpeg"
-                alt="Katie and Anna outside"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, 576px"
-              />
-            </div>
           </div>
         </section>
 
-        {/* ── The Venue ── */}
-        <section id="venue" className="py-28 px-6 bg-mist">
-          <div className="max-w-3xl mx-auto">
-            <SectionLabel>The Venue</SectionLabel>
-            <h2
-              className="text-forest text-5xl sm:text-6xl font-light italic mb-4 leading-tight"
-              style={{ fontFamily: "var(--font-cormorant)" }}
-            >
-              Como Park Conservatory
-            </h2>
-            <p className="text-bark/60 font-light text-sm mb-14 max-w-xl leading-relaxed">
-              Built in 1915, the Marjorie McNeely Conservatory is a Victorian
-              glass house set within Como Regional Park in Saint Paul. We fell
-              in love with this place — and now we&apos;re getting married here.
-            </p>
+        {/* ── Gallery ── */}
+        <section id="gallery" className="pb-28 px-6">
+          <div className="max-w-5xl mx-auto">
+            <SectionLabel>Gallery</SectionLabel>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {gardens.map((g) => (
-                <div key={g.name} className="group overflow-hidden border border-stone/60 bg-cream">
-                  <div
-                    className="h-48 flex items-end p-5"
-                    style={{ background: g.gradient }}
-                  >
-                    <span className="text-xs tracking-widest uppercase font-light text-white/70">
-                      {g.label}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3
-                      className="text-forest text-2xl font-light italic mb-2"
-                      style={{ fontFamily: "var(--font-cormorant)" }}
-                    >
-                      {g.name}
-                    </h3>
-                    <p className="text-bark/65 text-sm font-light leading-relaxed">
-                      {g.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            {/* Large + two small on left, tall on right */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {/* Full-width top on mobile, spans 2 cols on sm */}
+              <div className="col-span-2 sm:col-span-2 relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/katie-and-anna/bench.jpg"
+                  alt="Katie and Anna on a bench"
+                  fill
+                  className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, 66vw"
+                />
+              </div>
+
+              {/* Tall right column — spans 2 rows on sm */}
+              <div className="col-span-1 row-span-1 sm:row-span-2 relative aspect-[3/4] sm:aspect-auto overflow-hidden">
+                <Image
+                  src="/katie-and-anna/archway.jpg"
+                  alt="Katie and Anna under a stone archway"
+                  fill
+                  className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                />
+              </div>
+
+              {/* Bottom-left — wide */}
+              <div className="col-span-2 sm:col-span-2 relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src="/katie-and-anna/crosswalk.jpg"
+                  alt="Katie and Anna crossing the street"
+                  fill
+                  className="object-cover object-center hover:scale-[1.02] transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, 66vw"
+                />
+              </div>
+
+              {/* Bottom row: hero photo, full width */}
+              <div className="col-span-2 sm:col-span-3 relative aspect-[21/9] overflow-hidden">
+                <Image
+                  src="/katie-and-anna/couple.jpeg"
+                  alt="Katie and Anna outside City Hall"
+                  fill
+                  className="object-cover object-top hover:scale-[1.02] transition-transform duration-700"
+                  sizes="100vw"
+                />
+              </div>
             </div>
-
-            <p className="text-center text-bark/40 text-xs tracking-widest uppercase mt-10 font-light">
-              <a
-                href="https://comozooconservatory.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-fern transition-colors"
-              >
-                comozooconservatory.org
-              </a>
-            </p>
           </div>
         </section>
 
         {/* ── Schedule ── */}
-        <section id="schedule" className="py-28 px-6">
+        <section id="schedule" className="py-28 px-6 bg-mist">
           <div className="max-w-3xl mx-auto">
             <SectionLabel>The Day</SectionLabel>
             <h2
@@ -211,7 +200,7 @@ export default function Home() {
         </section>
 
         {/* ── Travel & Hotels ── */}
-        <section id="travel" className="py-28 px-6 bg-mist">
+        <section id="travel" className="py-28 px-6">
           <div className="max-w-3xl mx-auto">
             <SectionLabel>Travel</SectionLabel>
             <h2
@@ -318,49 +307,18 @@ function Leaf() {
   );
 }
 
-const gardens = [
-  {
-    label: "Ceremony",
-    name: "The Sunken Garden",
-    gradient: "linear-gradient(135deg, #2a4a2e 0%, #4a7a4e 60%, #8fa68c 100%)",
-    description:
-      "A vintage glass greenhouse opens onto a raised stone platform facing a Neoclassical water feature, star-shaped chandeliers, and the conservatory's ever-changing seasonal flower display. This is where we say \"I do.\"",
-  },
-  {
-    label: "Cocktail Hour",
-    name: "The Enchanted Garden",
-    gradient: "linear-gradient(135deg, #3a5a38 0%, #6b8a5a 60%, #c4928a 100%)",
-    description:
-      "Sweeping vistas of the iconic glass dome open onto lush pollinator gardens planted with native Minnesota wildflowers and butterfly-attracting perennials. Warm August evenings don't get more magical.",
-  },
-  {
-    label: "Explore",
-    name: "Japanese Garden",
-    gradient: "linear-gradient(135deg, #1e3a3a 0%, #4a7a7a 60%, #8fa6a8 100%)",
-    description:
-      "The Charlotte Partridge Ordway Japanese Garden — a gift from Saint Paul's sister city of Nagasaki — features a tranquil koi pond, stone pedestrian bridges, cloud-pruned pines, and a waterfall at its heart.",
-  },
-  {
-    label: "Reception Dinner",
-    name: "The Covered Porch",
-    gradient: "linear-gradient(135deg, #3a3a2a 0%, #7a7a5a 60%, #c4b9a8 100%)",
-    description:
-      "Floor-to-ceiling windows frame unobstructed views of the illuminated glass dome. By nightfall, the conservatory glows — a spectacular backdrop for dinner, toasts, and dancing.",
-  },
-];
-
 const schedule = [
   {
     time: "4:00 PM",
     title: "Ceremony",
-    space: "Sunken Garden",
+    space: "Enchanted Garden",
     note: "Guests should be seated by 3:45 PM. The Conservatory entrance is on Estabrook Drive.",
   },
   {
     time: "5:00 PM",
     title: "Cocktail Hour",
-    space: "Enchanted Garden",
-    note: "Drinks and passed bites among the pollinator gardens.",
+    space: "Sunken Garden",
+    note: "Drinks and passed bites beneath the glass greenhouse and star chandeliers.",
   },
   {
     time: "6:30 PM",
