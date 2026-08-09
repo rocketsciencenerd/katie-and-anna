@@ -14,16 +14,15 @@ export default function Home() {
           className="relative bg-forest flex flex-col"
           style={{ minHeight: "100svh" }}
         >
-          {/* Image: full-width on mobile, height-locked to viewport on desktop */}
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/couple.jpeg"
               alt="Katie and Anna"
-              width={5304}
-              height={7952}
+              fill
               priority
-              className="w-full h-auto sm:h-full sm:w-auto flex-shrink-0"
-              sizes="(max-width: 640px) 100vw, 45vw"
+              className="object-cover"
+              style={{ objectPosition: "center 55%" }}
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-forest/45" />
           </div>
