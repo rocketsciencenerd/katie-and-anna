@@ -4,17 +4,17 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 
 const photos = [
-  { src: "/katie-and-anna/bench.jpg",     alt: "Katie and Anna on a park bench",          aspect: "aspect-[3/2]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/katie-and-anna/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[3/4]",  cols: "col-span-1" },
-  { src: "/katie-and-anna/landscape.jpg", alt: "Katie and Anna in the mountains",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/katie-and-anna/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[3/4]",  cols: "col-span-1" },
-  { src: "/katie-and-anna/holiday.jpg",   alt: "Katie and Anna at a holiday event",        aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/katie-and-anna/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-1" },
-  { src: "/katie-and-anna/lake.jpg",      alt: "Katie and Anna by a lake",                 aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/katie-and-anna/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[4/3]",  cols: "col-span-1 sm:col-span-1" },
-  { src: "/katie-and-anna/mountain.png",  alt: "Katie and Anna in the mountains",          aspect: "aspect-[1/2]",  cols: "col-span-1" },
-  { src: "/katie-and-anna/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[16/9]", cols: "col-span-2 sm:col-span-3" },
-  { src: "/katie-and-anna/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[21/9]", cols: "col-span-2 sm:col-span-3", contain: true },
+  { src: "/bench.jpg",     alt: "Katie and Anna on a park bench",          aspect: "aspect-[3/2]",  cols: "col-span-2 sm:col-span-2" },
+  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[3/4]",  cols: "col-span-1" },
+  { src: "/landscape.jpg", alt: "Katie and Anna in the mountains",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
+  { src: "/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[3/4]",  cols: "col-span-1" },
+  { src: "/holiday.jpg",   alt: "Katie and Anna at a holiday event",        aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
+  { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-1" },
+  { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
+  { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[4/3]",  cols: "col-span-1 sm:col-span-1" },
+  { src: "/mountain.png",  alt: "Katie and Anna in the mountains",          aspect: "aspect-[1/2]",  cols: "col-span-1" },
+  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[16/9]", cols: "col-span-2 sm:col-span-3" },
+  { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[21/9]", cols: "col-span-2 sm:col-span-3", contain: true },
 ];
 
 export default function GalleryGrid() {

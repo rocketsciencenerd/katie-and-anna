@@ -17,7 +17,7 @@ export default function Home() {
           {/* Image: full-width on mobile, height-locked to viewport on desktop */}
           <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
             <Image
-              src="/katie-and-anna/couple.jpeg"
+              src="/couple.jpeg"
               alt="Katie and Anna"
               width={5304}
               height={7952}
