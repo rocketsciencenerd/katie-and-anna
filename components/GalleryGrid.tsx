@@ -12,7 +12,6 @@ const photos = [
   { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-1" },
   { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
   { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[4/3]",  cols: "col-span-1 sm:col-span-1" },
-  { src: "/mountain.png",  alt: "Katie and Anna in the mountains",          aspect: "aspect-[1/2]",  cols: "col-span-1" },
   { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[16/9]", cols: "col-span-2 sm:col-span-3" },
   { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[21/9]", cols: "col-span-2 sm:col-span-3", contain: true },
 ];
