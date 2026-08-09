@@ -83,25 +83,29 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 gap-12 items-start">
               <div className="space-y-5 text-bark/75 font-light leading-relaxed text-[15px]">
                 <p>
-                  In 2019, they were both first-year students in the Johns
-                  Hopkins Master of Public Health program. Anna asked Katie for
-                  her number — officially, to start a group chat. It was not
-                  for a group chat.
+                  Some love stories begin with grand gestures. Ours started
+                  somewhere quieter — Anna asked Katie for her number in their
+                  first year at Johns Hopkins, officially to start a group chat.
+                  It was not for a group chat.
                 </p>
                 <p>
-                  Nights out at The Crown and long conversations at Leon&apos;s
-                  confirmed what was already becoming obvious: neither of them
-                  wanted to go home.
+                  What followed were nights out at The Crown and long
+                  conversations at Leon&apos;s, and the slow, certain feeling
+                  that neither of us wanted to be anywhere else.
                 </p>
               </div>
               <div className="space-y-5 text-bark/75 font-light leading-relaxed text-[15px]">
                 <p>
-                  Six years later, they&apos;ve shared five apartments across
-                  four cities and filled a passport together — Japan, Turkey,
-                  Morocco, England, Germany, and counting.
+                  We&apos;ve spent the six years since building a life that
+                  feels like home: five apartments, four cities, adventures
+                  across Japan, Turkey, Morocco, England, Germany, and
+                  wherever comes next — and an embarrassing number of opinions
+                  about coffee.
                 </p>
                 <p>
-                  Now they&apos;re asking you to be there for what comes next.
+                  Now we&apos;re asking you to be there when we make it
+                  official, and to help us celebrate the beginning of whatever
+                  comes next.
                 </p>
               </div>
             </div>
