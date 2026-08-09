@@ -3,17 +3,19 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 
+// Desktop (sm: 3-col): pairs of large landscape (col-span-2) + portrait accent (col-span-1)
+// Mobile (2-col): all col-span-2 = full-width stack, no orphaned gaps
 const photos = [
   { src: "/bench.jpg",     alt: "Katie and Anna on a park bench",          aspect: "aspect-[3/2]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[3/4]",  cols: "col-span-1" },
+  { src: "/bridge.jpg",    alt: "Katie and Anna on the Brooklyn Bridge",    aspect: "aspect-[3/4]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/landscape.jpg", alt: "Katie and Anna in the mountains",          aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[3/4]",  cols: "col-span-1" },
+  { src: "/garden.jpg",    alt: "Anna in the garden",                       aspect: "aspect-[3/4]",  cols: "col-span-2 sm:col-span-1" },
+  { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/holiday.jpg",   alt: "Katie and Anna at a holiday event",        aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-1" },
+  { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[3/4]",  cols: "col-span-2 sm:col-span-1" },
   { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 aspect: "aspect-[4/3]",  cols: "col-span-2 sm:col-span-2" },
-  { src: "/park.jpg",      alt: "Katie and Anna in the park",               aspect: "aspect-[4/3]",  cols: "col-span-1 sm:col-span-1" },
-  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[16/9]", cols: "col-span-2 sm:col-span-3" },
-  { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         aspect: "aspect-[21/9]", cols: "col-span-2 sm:col-span-3", contain: true },
+  { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     aspect: "aspect-[2/3]",  cols: "col-span-2 sm:col-span-1" },
+  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       aspect: "aspect-[16/9]", cols: "col-span-2 sm:col-span-2" },
 ];
 
 export default function GalleryGrid() {
@@ -50,17 +52,13 @@ export default function GalleryGrid() {
           <button
             key={photo.src}
             onClick={() => setActive(i)}
-            className={`relative overflow-hidden cursor-zoom-in group ${photo.cols} ${photo.aspect} ${
-              photo.contain ? "bg-forest" : ""
-            }`}
+            className={`relative overflow-hidden cursor-zoom-in group ${photo.cols} ${photo.aspect}`}
           >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              className={`${
-                photo.contain ? "object-contain" : "object-cover object-center"
-              } group-hover:scale-[1.02] transition-transform duration-700`}
+              className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
               sizes={
                 photo.cols.includes("col-span-3") ? "100vw" :
                 photo.cols.includes("col-span-2") ? "(max-width:640px) 100vw, 66vw" :
