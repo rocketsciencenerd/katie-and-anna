@@ -28,22 +28,18 @@ export default function Home() {
           </div>
 
           <div
-            className="relative z-10 flex flex-col items-center justify-start text-center px-6 pt-28 pb-16"
+            className="relative z-10 flex flex-col items-end justify-start text-right px-8 sm:px-14 pt-28 pb-16"
             style={{ minHeight: "100svh" }}
           >
-            <p className="text-sage-light/80 tracking-[0.35em] uppercase text-xs font-light mb-6">
-              Together with their families
-            </p>
             <h1
               className="text-cream text-7xl sm:text-8xl md:text-9xl font-light italic leading-none mb-4"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
               Katie&nbsp;&amp;&nbsp;Anna
             </h1>
-            <div className="flex items-center gap-4 my-8">
+            <div className="flex items-center gap-4 my-6">
               <div className="w-16 h-px bg-sage" />
               <Leaf />
-              <div className="w-16 h-px bg-sage" />
             </div>
             <p
               className="text-cream/90 text-2xl sm:text-3xl font-light tracking-wide"
