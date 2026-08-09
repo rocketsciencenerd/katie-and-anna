@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "#story", label: "Our Story" },
+  { href: "#venue", label: "Venue" },
   { href: "#schedule", label: "Schedule" },
   { href: "#travel", label: "Travel" },
   { href: "#rsvp", label: "RSVP" },
@@ -24,13 +25,13 @@ export default function Nav() {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-cream/95 backdrop-blur shadow-sm text-bark"
-          : "bg-transparent text-stone"
+          : "bg-transparent text-cream"
       }`}
     >
       <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#home"
-          className="font-serif text-xl italic tracking-wide transition-opacity hover:opacity-70"
+          className="text-xl italic tracking-wide transition-opacity hover:opacity-60"
           style={{ fontFamily: "var(--font-cormorant)" }}
         >
           K &amp; A
@@ -56,27 +57,21 @@ export default function Nav() {
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
-          <span
-            className={`block w-5 h-px transition-all ${
-              scrolled ? "bg-bark" : "bg-stone"
-            } ${open ? "rotate-45 translate-y-[7px]" : ""}`}
-          />
-          <span
-            className={`block w-5 h-px transition-all ${
-              scrolled ? "bg-bark" : "bg-stone"
-            } ${open ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-5 h-px transition-all ${
-              scrolled ? "bg-bark" : "bg-stone"
-            } ${open ? "-rotate-45 -translate-y-[7px]" : ""}`}
-          />
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className={`block w-5 h-px transition-all ${scrolled ? "bg-bark" : "bg-cream"} ${
+                i === 0 && open ? "rotate-45 translate-y-[7px]" : ""
+              } ${i === 1 && open ? "opacity-0" : ""} ${
+                i === 2 && open ? "-rotate-45 -translate-y-[7px]" : ""
+              }`}
+            />
+          ))}
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="sm:hidden bg-cream text-bark border-t border-stone-dark px-6 py-4">
+        <div className="sm:hidden bg-cream text-bark border-t border-stone/40 px-6 py-4">
           <ul className="flex flex-col gap-4">
             {links.map((l) => (
               <li key={l.href}>

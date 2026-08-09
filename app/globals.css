@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-wine: #6b2d3e;
-  --color-wine-light: #8b3d52;
-  --color-wine-dark: #4e1f2c;
-  --color-olive: #4a5c2e;
-  --color-olive-light: #6b8542;
-  --color-olive-dark: #323e1f;
-  --color-amber: #b8860b;
-  --color-amber-light: #d4a017;
-  --color-stone: #f5f0e8;
-  --color-stone-dark: #e8e0d0;
-  --color-cream: #faf8f4;
-  --color-bark: #2c1810;
-  --color-sage: #7a8f5c;
+  /* Botanical garden palette drawn from Como Park Conservatory */
+  --color-forest: #243b22;
+  --color-forest-light: #345430;
+  --color-fern: #4a6741;
+  --color-sage: #8fa68c;
+  --color-sage-light: #c2d4bf;
+  --color-mist: #eef0e8;
+  --color-cream: #f8f5ef;
+  --color-stone: #c4b9a8;
+  --color-stone-dark: #a89f90;
+  --color-terracotta: #8b5e3c;
+  --color-bloom: #c4928a;
+  --color-water: #6b9096;
+  --color-bark: #2a2e25;
 
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -29,11 +30,7 @@ body {
   font-family: var(--font-sans);
 }
 
-.font-serif {
-  font-family: var(--font-serif);
-}
-
 ::selection {
-  background: var(--color-wine-light);
+  background: var(--color-fern);
   color: white;
 }

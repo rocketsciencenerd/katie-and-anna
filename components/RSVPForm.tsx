@@ -33,12 +33,12 @@ export default function RSVPForm() {
       <div className="text-center py-8">
         <div className="text-4xl mb-4">♡</div>
         <p
-          className="font-serif text-stone text-3xl italic mb-3"
+          className="font-serif text-cream text-3xl italic mb-3"
           style={{ fontFamily: "var(--font-cormorant)" }}
         >
           Thank you!
         </p>
-        <p className="text-stone/70 font-light text-sm">
+        <p className="text-cream/65 font-light text-sm">
           We&apos;ve received your RSVP and can&apos;t wait to see you.
         </p>
       </div>
@@ -75,10 +75,10 @@ export default function RSVPForm() {
           {(["yes", "no"] as const).map((val) => (
             <label
               key={val}
-              className={`flex-1 flex items-center justify-center gap-2 border rounded-sm py-3 cursor-pointer text-sm font-light tracking-wide transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 border py-3 cursor-pointer text-sm font-light tracking-wide transition-all ${
                 attending === val
-                  ? "border-stone bg-stone/20 text-stone"
-                  : "border-stone/30 text-stone/60 hover:border-stone/60"
+                  ? "border-cream bg-cream/15 text-cream"
+                  : "border-cream/25 text-cream/50 hover:border-cream/50"
               }`}
             >
               <input
@@ -133,13 +133,13 @@ export default function RSVPForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="w-full py-4 border border-stone text-stone text-xs tracking-[0.25em] uppercase font-medium hover:bg-stone hover:text-wine transition-all duration-300 disabled:opacity-50"
+        className="w-full py-4 border border-cream/50 text-cream text-xs tracking-[0.25em] uppercase font-medium hover:bg-cream hover:text-forest transition-all duration-300 disabled:opacity-50"
       >
         {state === "loading" ? "Sending…" : "Send RSVP"}
       </button>
 
       {state === "error" && (
-        <p className="text-center text-stone/60 text-sm font-light">
+        <p className="text-center text-cream/50 text-sm font-light">
           Something went wrong — please try again or email us directly.
         </p>
       )}
@@ -148,7 +148,7 @@ export default function RSVPForm() {
 }
 
 const labelClass =
-  "block text-xs tracking-widest uppercase text-stone/60 font-light mb-2";
+  "block text-xs tracking-widest uppercase text-cream/50 font-light mb-2";
 
 const inputClass =
-  "w-full bg-transparent border border-stone/30 rounded-sm px-4 py-3 text-stone placeholder:text-stone/30 text-sm font-light focus:outline-none focus:border-stone transition-colors";
+  "w-full bg-transparent border border-cream/25 px-4 py-3 text-cream placeholder:text-cream/25 text-sm font-light focus:outline-none focus:border-cream/60 transition-colors";
