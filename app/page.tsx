@@ -209,6 +209,28 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Registry ── */}
+        <section id="registry" className="py-28 px-6 bg-mist">
+          <div className="max-w-2xl mx-auto text-center">
+            <SectionLabel>Registry</SectionLabel>
+            <h2
+              className="text-forest text-5xl sm:text-6xl font-light italic mb-8 leading-tight"
+              style={{ fontFamily: "var(--font-cormorant)" }}
+            >
+              Your presence is our gift
+            </h2>
+            <p className="text-bark/70 font-light leading-relaxed text-[15px] mb-6">
+              Truly — having you there with us is all we could ask for. Please
+              don&apos;t feel any obligation beyond showing up and celebrating
+              with us.
+            </p>
+            <p className="text-bark/70 font-light leading-relaxed text-[15px]">
+              That said, if you&apos;d like to contribute something, we
+              gratefully accept donations toward our wedding and travel costs.
+            </p>
+          </div>
+        </section>
+
         {/* ── RSVP ── */}
         <section id="rsvp" className="py-28 px-6 bg-forest text-cream">
           <div className="max-w-xl mx-auto">
