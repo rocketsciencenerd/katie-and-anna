@@ -93,7 +93,7 @@ export default function Home() {
                 <p>
                   We&apos;ve spent the six years since building a life that
                   feels like home: five apartments, four cities, adventures
-                  across Japan, Turkey, Morocco, England, Germany, and
+                  across the world and
                   wherever comes next — and an embarrassing number of opinions
                   about coffee.
                 </p>
