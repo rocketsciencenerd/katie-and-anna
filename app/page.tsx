@@ -11,8 +11,8 @@ export default function Home() {
         {/* ── Hero ── */}
         <section
           id="home"
-          className="relative bg-forest flex flex-col"
-          style={{ minHeight: "100dvh" }}
+          className="relative bg-forest flex flex-col overflow-hidden"
+          style={{ height: "100svh" }}
         >
           <div className="absolute inset-0 overflow-hidden">
             <Image
@@ -29,7 +29,7 @@ export default function Home() {
 
           <div
             className="relative z-10 flex flex-col items-end justify-start text-right px-8 sm:px-14 pt-28 pb-16"
-            style={{ minHeight: "100dvh" }}
+            style={{ flex: 1 }}
           >
             <h1
               className="text-cream text-5xl sm:text-8xl md:text-9xl font-light italic leading-none mb-4"
