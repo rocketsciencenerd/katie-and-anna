@@ -142,6 +142,18 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-12 p-7 border border-sage/40 bg-sage/10">
+              <h3
+                className="text-bark text-2xl font-light mb-2"
+                style={{ fontFamily: "var(--font-cormorant)" }}
+              >
+                Kids & Families
+              </h3>
+              <p className="text-bark/65 text-sm font-light leading-relaxed">
+                Kids are welcome to join us. We kindly ask parents to supervise. Como Park Conservatory has ample outdoor space — anyone who needs a moment away from the ceremony or speeches is free to roam the grounds.
+              </p>
+            </div>
           </div>
         </section>
 
