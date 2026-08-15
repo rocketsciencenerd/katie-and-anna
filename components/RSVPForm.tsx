@@ -42,7 +42,7 @@ export default function RSVPForm() {
         body: JSON.stringify({ type: "lookup", name: nameInput.trim().replace(/\s+/g, " ") }),
       });
       const data = await res.json();
-      if (!data.found) {
+      if (data.result !== "found") {
         setNotFound(true);
         return;
       }
