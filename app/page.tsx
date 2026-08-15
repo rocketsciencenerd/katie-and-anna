@@ -98,8 +98,7 @@ export default function Home() {
                 </p>
                 <p>
                   Now we&apos;re asking you to be there when we make it
-                  official, and to help us celebrate the beginning of whatever
-                  comes next.
+                  official, and to help us celebrate the beginning of this next chapter.
                 </p>
               </div>
             </div>
