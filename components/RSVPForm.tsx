@@ -115,7 +115,7 @@ export default function RSVPForm() {
   if (step === "success") {
     return (
       <div className="text-center py-8">
-        <div className="text-4xl mb-4">♡</div>
+        <div className="text-4xl mb-4">🚀🩺</div>
         <p className="text-cream text-3xl font-light italic mb-3" style={{ fontFamily: "var(--font-cormorant)" }}>
           Thank you!
         </p>
