@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Nav from "@/components/Nav";
 import RSVPForm from "@/components/RSVPForm";
 import GalleryGrid from "@/components/GalleryGrid";
+import HeroImage from "@/components/HeroImage";
 
 export default function Home() {
   return (
@@ -15,16 +15,7 @@ export default function Home() {
           style={{ height: "100svh" }}
         >
           <div className="absolute inset-0 overflow-hidden">
-            <Image
-              src="/couple.jpeg"
-              alt="Katie and Anna"
-              fill
-              priority
-              className="object-cover"
-              style={{ objectPosition: "center 55%" }}
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-forest/45" />
+            <HeroImage />
           </div>
 
           <div
