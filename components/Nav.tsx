@@ -23,9 +23,9 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-[background-color,color,box-shadow] duration-500 ${
         scrolled
-          ? "bg-cream/95 backdrop-blur shadow-sm text-bark"
+          ? "bg-cream/95 shadow-sm text-bark"
           : "bg-transparent text-cream"
       }`}
     >

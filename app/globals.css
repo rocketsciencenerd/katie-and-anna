@@ -24,11 +24,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--color-cream);
   color: var(--color-bark);
   font-family: var(--font-sans);
-  overflow-x: hidden;
 }
 
 ::selection {
