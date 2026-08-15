@@ -20,6 +20,7 @@ export default function RSVPForm() {
   const [nameInput, setNameInput] = useState("");
   const [looking, setLooking] = useState(false);
   const [notFound, setNotFound] = useState(false);
+  const [lookupError, setLookupError] = useState(false);
   const [party, setParty] = useState("");
   const [members, setMembers] = useState<string[]>([]);
   const [existing, setExisting] = useState<ExistingRSVP | null>(null);
@@ -33,6 +34,7 @@ export default function RSVPForm() {
     e.preventDefault();
     setLooking(true);
     setNotFound(false);
+    setLookupError(false);
     try {
       const res = await fetch(ENDPOINT, {
         method: "POST",
@@ -63,7 +65,7 @@ export default function RSVPForm() {
         setStep("form");
       }
     } catch {
-      setNotFound(true);
+      setLookupError(true);
     } finally {
       setLooking(false);
     }
@@ -202,6 +204,11 @@ export default function RSVPForm() {
           {notFound && (
             <p className="mt-3 text-cream/50 text-xs font-light leading-relaxed">
               We couldn&apos;t find your name on the guest list. Please double-check the spelling or contact us directly.
+            </p>
+          )}
+          {lookupError && (
+            <p className="mt-3 text-terracotta text-xs font-light leading-relaxed">
+              Something went wrong connecting to the server. Please try again in a moment.
             </p>
           )}
         </div>
