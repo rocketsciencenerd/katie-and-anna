@@ -11,15 +11,14 @@ export default function Home() {
         {/* ── Hero ── */}
         <section
           id="home"
-          className="relative bg-forest flex flex-col overflow-hidden"
-          style={{ height: "100svh" }}
+          className="relative bg-forest flex flex-col overflow-hidden min-h-[100svh]"
         >
           <div className="absolute inset-0 overflow-hidden">
             <HeroImage />
           </div>
 
           <div
-            className="relative z-10 flex flex-col items-end justify-start text-right px-8 sm:px-14 pt-28 pb-16"
+            className="relative z-10 flex flex-col items-center sm:items-end justify-center sm:justify-start text-center sm:text-right px-8 sm:px-14 sm:pt-28 pb-16"
             style={{ flex: 1 }}
           >
             <h1
@@ -43,16 +42,6 @@ export default function Home() {
             </p>
           </div>
 
-          <a
-            href="#story"
-            className="absolute bottom-10 z-10 flex flex-col items-center gap-2 text-cream/50 hover:text-cream transition-colors"
-            aria-label="Scroll down"
-          >
-            <span className="text-xs tracking-widest uppercase font-light">Scroll</span>
-            <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
         </section>
 
         {/* ── Our Story ── */}
