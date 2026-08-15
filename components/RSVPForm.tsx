@@ -4,7 +4,16 @@ import { useState } from "react";
 
 const ENDPOINT = process.env.NEXT_PUBLIC_RSVP_ENDPOINT ?? "";
 
-type Step = "lookup" | "form" | "success" | "error";
+type Step = "lookup" | "already" | "form" | "success" | "error";
+
+interface ExistingRSVP {
+  rsvpDate: string;
+  attending: string;
+  declining: string;
+  email: string;
+  dietary: string;
+  note: string;
+}
 
 export default function RSVPForm() {
   const [step, setStep] = useState<Step>("lookup");
@@ -13,7 +22,9 @@ export default function RSVPForm() {
   const [notFound, setNotFound] = useState(false);
   const [party, setParty] = useState("");
   const [members, setMembers] = useState<string[]>([]);
+  const [existing, setExisting] = useState<ExistingRSVP | null>(null);
   const [attending, setAttending] = useState<Record<string, boolean>>({});
+  const [email, setEmail] = useState("");
   const [dietary, setDietary] = useState("");
   const [note, setNote] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -29,21 +40,45 @@ export default function RSVPForm() {
         body: JSON.stringify({ type: "lookup", name: nameInput.trim() }),
       });
       const data = await res.json();
-      if (data.found) {
-        setParty(data.party);
-        setMembers(data.members);
+      if (!data.found) {
+        setNotFound(true);
+        return;
+      }
+      setParty(data.party);
+      setMembers(data.members);
+      if (data.alreadyRsvped) {
+        setExisting({
+          rsvpDate: data.rsvpDate,
+          attending: data.attending,
+          declining: data.declining,
+          email: data.email,
+          dietary: data.dietary,
+          note: data.note,
+        });
+        setStep("already");
+      } else {
         const initial: Record<string, boolean> = {};
         data.members.forEach((m: string) => { initial[m] = true; });
         setAttending(initial);
         setStep("form");
-      } else {
-        setNotFound(true);
       }
     } catch {
       setNotFound(true);
     } finally {
       setLooking(false);
     }
+  }
+
+  function handleUpdate() {
+    const initial: Record<string, boolean> = {};
+    members.forEach((m) => {
+      initial[m] = existing?.attending.split(", ").includes(m) ?? true;
+    });
+    setAttending(initial);
+    setEmail(existing?.email ?? "");
+    setDietary(existing?.dietary ?? "");
+    setNote(existing?.note ?? "");
+    setStep("form");
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -60,6 +95,7 @@ export default function RSVPForm() {
           party,
           attending: attendingList,
           declining: decliningList,
+          email,
           dietary,
           note,
         }),
@@ -96,6 +132,55 @@ export default function RSVPForm() {
         </p>
         <button onClick={() => setStep("lookup")} className="mt-4 text-cream/50 hover:text-cream text-xs tracking-widest uppercase transition-colors">
           Try again
+        </button>
+      </div>
+    );
+  }
+
+  if (step === "already" && existing) {
+    const formattedDate = new Date(existing.rsvpDate).toLocaleDateString("en-US", {
+      month: "long", day: "numeric", year: "numeric",
+    });
+    return (
+      <div className="space-y-6">
+        <div className="border border-cream/20 bg-cream/5 px-6 py-5">
+          <p className="text-cream/50 text-xs tracking-widest uppercase font-light mb-1">RSVP received</p>
+          <p className="text-cream text-2xl font-light italic mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>
+            {party}
+          </p>
+          <div className="space-y-2 text-sm font-light">
+            {existing.attending && (
+              <p className="text-cream/75">
+                <span className="text-cream/40 tracking-widest uppercase text-xs mr-3">Attending</span>
+                {existing.attending}
+              </p>
+            )}
+            {existing.declining && (
+              <p className="text-cream/75">
+                <span className="text-cream/40 tracking-widest uppercase text-xs mr-3">Declining</span>
+                {existing.declining}
+              </p>
+            )}
+            {existing.dietary && (
+              <p className="text-cream/75">
+                <span className="text-cream/40 tracking-widest uppercase text-xs mr-3">Dietary</span>
+                {existing.dietary}
+              </p>
+            )}
+            {existing.note && (
+              <p className="text-cream/75">
+                <span className="text-cream/40 tracking-widest uppercase text-xs mr-3">Note</span>
+                {existing.note}
+              </p>
+            )}
+          </div>
+          <p className="text-cream/30 text-xs font-light mt-4">Submitted {formattedDate}</p>
+        </div>
+        <button
+          onClick={handleUpdate}
+          className="w-full py-4 border border-cream/50 text-cream text-xs tracking-[0.25em] uppercase font-medium hover:bg-cream hover:text-forest transition-all duration-300"
+        >
+          Update my RSVP
         </button>
       </div>
     );
@@ -138,6 +223,18 @@ export default function RSVPForm() {
         <p className="text-cream text-2xl font-light italic" style={{ fontFamily: "var(--font-cormorant)" }}>
           {party}
         </p>
+      </div>
+
+      <div>
+        <label className={labelClass}>Email</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="you@example.com"
+          className={inputClass}
+        />
       </div>
 
       <fieldset className="space-y-3">
