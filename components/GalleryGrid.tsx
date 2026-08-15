@@ -53,19 +53,7 @@ export default function GalleryGrid() {
       {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {photos.map((photo, i) => (
-          <button
-            key={photo.src}
-            onClick={() => setActive(i)}
-            className={`relative overflow-hidden cursor-zoom-in group h-[240px] sm:h-[340px] ${photo.cols}`}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
-              sizes="(max-width:640px) 100vw, 66vw"
-            />
-          </button>
+          <GalleryPhoto key={photo.src} photo={photo} onClick={() => setActive(i)} />
         ))}
       </div>
 
@@ -128,5 +116,25 @@ export default function GalleryGrid() {
         </div>
       )}
     </>
+  );
+}
+
+function GalleryPhoto({ photo, onClick }: { photo: typeof photos[0]; onClick: () => void }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <button
+      onClick={onClick}
+      className={`relative overflow-hidden cursor-zoom-in group h-[240px] sm:h-[340px] ${photo.cols}`}
+    >
+      <Image
+        src={photo.src}
+        alt={photo.alt}
+        fill
+        className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
+        sizes="(max-width:640px) 100vw, 66vw"
+        style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+        onLoad={() => setLoaded(true)}
+      />
+    </button>
   );
 }

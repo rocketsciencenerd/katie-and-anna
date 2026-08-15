@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 const PASSWORD = process.env.NEXT_PUBLIC_SITE_PASSWORD ?? "";
 const SESSION_KEY = "ka_auth";
@@ -10,7 +10,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY) === "1") setAuthed(true);
   }, []);
 
