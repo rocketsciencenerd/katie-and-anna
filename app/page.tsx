@@ -94,8 +94,7 @@ export default function Home() {
                   We&apos;ve spent the six years since building a life that
                   feels like home: five apartments, four cities, adventures
                   across the world and
-                  wherever comes next — and an embarrassing number of opinions
-                  about coffee.
+                  wherever comes next.
                 </p>
                 <p>
                   Now we&apos;re asking you to be there when we make it
