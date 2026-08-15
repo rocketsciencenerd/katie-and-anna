@@ -151,7 +151,7 @@ export default function Home() {
                 Kids & Families
               </h3>
               <p className="text-bark/65 text-sm font-light leading-relaxed">
-                Kids are welcome to join us if they are on the invite list. We kindly ask parents to supervise. Como Park Conservatory has ample outdoor space — anyone who needs a moment away from the ceremony or speeches is free to roam the grounds with a parent.
+                Kids are welcome to join us if they are on the invite list. We kindly ask parents to supervise. Como Park Conservatory has ample outdoor space — anyone who needs a moment away from the ceremony or speeches is free to roam the grounds with a parent so all can hear and enjoy the festivities.
               </p>
             </div>
           </div>
