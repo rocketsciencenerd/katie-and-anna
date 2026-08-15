@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const PASSWORD = "REDACTED";
+const PASSWORD = process.env.NEXT_PUBLIC_SITE_PASSWORD ?? "";
 const SESSION_KEY = "ka_auth";
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
