@@ -27,6 +27,7 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_SITE_PASSWORD: ${{ secrets.NEXT_PUBLIC_SITE_PASSWORD }}
+          NEXT_PUBLIC_RSVP_ENDPOINT: ${{ secrets.NEXT_PUBLIC_RSVP_ENDPOINT }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
