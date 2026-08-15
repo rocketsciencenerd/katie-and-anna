@@ -201,10 +201,24 @@ export default function Home() {
               don&apos;t feel any obligation beyond showing up and celebrating
               with us.
             </p>
-            <p className="text-bark/70 font-light leading-relaxed text-[15px] mb-8">
-              That said, if you&apos;d like to contribute something, we
-              gratefully accept donations toward our wedding and travel costs.
+            <p className="text-bark/70 font-light leading-relaxed text-[15px] mb-10">
+              That said, if you&apos;d like to contribute something, we&apos;re
+              putting all gifts toward our wedding, honeymoon, and future home together.
             </p>
+
+            <div className="grid sm:grid-cols-2 gap-4 mb-8 text-left">
+              <div className="border border-stone/60 bg-cream px-6 py-5">
+                <p className="text-xs tracking-widest uppercase text-fern font-medium mb-3">Venmo</p>
+                <p className="text-bark font-light text-sm mb-1">@katiejetheinemann <span className="text-bark/40">— Katie</span></p>
+                <p className="text-bark font-light text-sm">@Anna-Najor <span className="text-bark/40">— Anna</span></p>
+              </div>
+              <div className="border border-stone/60 bg-cream px-6 py-5">
+                <p className="text-xs tracking-widest uppercase text-fern font-medium mb-3">Zelle</p>
+                <p className="text-bark font-light text-sm mb-1">(612) 413-7096 <span className="text-bark/40">— Katie</span></p>
+                <p className="text-bark font-light text-sm">(760) 814-5242 <span className="text-bark/40">— Anna</span></p>
+              </div>
+            </div>
+
             <p className="text-bark/40 font-light text-xs tracking-wide">
               If sending via Venmo, please select <span className="italic">Personal</span> (not &ldquo;Goods &amp; Services&rdquo;) so it&apos;s categorized correctly.
             </p>
