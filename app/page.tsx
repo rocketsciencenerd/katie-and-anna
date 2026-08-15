@@ -45,7 +45,7 @@ export default function Home() {
               className="text-cream/90 text-2xl sm:text-3xl font-light tracking-wide"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
-              August 21, 2027
+              August 7, 2027
             </p>
             <p className="text-cream/65 text-sm font-light tracking-widest uppercase mt-2">
               Como Park Conservatory · Saint Paul, MN
@@ -123,7 +123,7 @@ export default function Home() {
               className="text-forest text-5xl sm:text-6xl font-light italic mb-10 leading-tight"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
-              August 21, 2027
+              August 7, 2027
             </h2>
 
             <div className="divide-y divide-stone/40">
@@ -257,7 +257,7 @@ export default function Home() {
             Katie &amp; Anna
           </p>
           <p className="text-xs tracking-widest uppercase">
-            August 21, 2027 · Como Park Conservatory · Saint Paul, MN
+            August 7, 2027 · Como Park Conservatory · Saint Paul, MN
           </p>
         </footer>
       </main>
