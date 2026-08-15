@@ -38,7 +38,7 @@ export default function RSVPForm() {
     try {
       const res = await fetch(ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({ type: "lookup", name: nameInput.trim().replace(/\s+/g, " ") }),
       });
       const data = await res.json();
@@ -91,7 +91,7 @@ export default function RSVPForm() {
     try {
       const res = await fetch(ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({
           type: "rsvp",
           party,
