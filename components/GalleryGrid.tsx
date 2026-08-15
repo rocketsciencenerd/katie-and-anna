@@ -19,6 +19,7 @@ const photos = [
   { src: "/crosswalk.jpg",   alt: "Katie and Anna crossing the street",        cols: "col-span-2 sm:col-span-2" }, // row 5 — landscape left
   { src: "/archway.jpg",     alt: "Katie and Anna under a stone archway",      cols: "col-span-2 sm:col-span-1" }, // row 5 — portrait right
   { src: "/cappadocia.jpg",  alt: "Katie and Anna in Cappadocia, Turkey",      cols: "col-span-2 sm:col-span-1" }, // row 6 — portrait left
+  { src: "/travel2.jpg",    alt: "Katie and Anna traveling",                   cols: "col-span-2 sm:col-span-2" }, // row 6 — landscape right
 ];
 
 export default function GalleryGrid() {
