@@ -166,28 +166,8 @@ export default function Home() {
             </h2>
             <p className="text-bark/60 font-light text-sm mb-12 leading-relaxed">
               Como Park Conservatory is at 1225 Estabrook Drive, Saint Paul, MN 55103.
-              Free parking is available on site. More hotel block details coming soon.
+              Free parking is available on site. Hotel recommendations coming soon.
             </p>
-
-            <div className="grid sm:grid-cols-2 gap-6 mb-10">
-              {hotels.map((hotel) => (
-                <div key={hotel.name} className="border border-stone/60 bg-cream p-7">
-                  <div className="inline-block bg-fern/10 text-fern text-xs font-medium tracking-widest uppercase px-3 py-1 mb-4">
-                    {hotel.tag}
-                  </div>
-                  <h3
-                    className="text-bark text-2xl font-light mb-1"
-                    style={{ fontFamily: "var(--font-cormorant)" }}
-                  >
-                    {hotel.name}
-                  </h3>
-                  <p className="text-bark/45 text-xs font-light mb-3">{hotel.address}</p>
-                  <p className="text-bark/65 text-sm font-light leading-relaxed">
-                    {hotel.description}
-                  </p>
-                </div>
-              ))}
-            </div>
 
             <div className="p-7 border border-terracotta/30 bg-terracotta/5">
               <h3

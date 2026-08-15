@@ -7,16 +7,12 @@ const SESSION_KEY = "ka_auth";
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
   const [authed, setAuthed] = useState(false);
-  const [ready, setReady] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    setAuthed(sessionStorage.getItem(SESSION_KEY) === "1");
-    setReady(true);
+    if (sessionStorage.getItem(SESSION_KEY) === "1") setAuthed(true);
   }, []);
-
-  if (!ready) return null;
 
   if (authed) return <>{children}</>;
 
