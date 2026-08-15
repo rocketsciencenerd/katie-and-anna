@@ -80,8 +80,7 @@ export default function Home() {
                 <p>
                   Some love stories begin with grand gestures. Ours started
                   somewhere quieter — Anna asked Katie for her number in their
-                  first year at Johns Hopkins, officially to start a group chat.
-                  It was not for a group chat.
+                  first year at Johns Hopkins to &quot;start a group chat&quot; ;)
                 </p>
                 <p>
                   What followed were nights out at The Crown and long
