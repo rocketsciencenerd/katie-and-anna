@@ -22,10 +22,10 @@ export default function Home() {
             style={{ flex: 1 }}
           >
             <h1
-              className="text-cream text-5xl sm:text-8xl md:text-9xl font-light italic leading-none mb-4"
+              className="text-cream text-4xl sm:text-8xl md:text-9xl font-light italic leading-none mb-4"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
-              Katie&nbsp;&amp;&nbsp;Anna
+              Katie &amp; Anna
             </h1>
             <div className="flex items-center gap-4 my-6">
               <div className="w-16 h-px bg-sage" />

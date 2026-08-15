@@ -36,6 +36,11 @@ body {
   max-width: 100%;
 }
 
+/* Hide password gate immediately for authenticated users (set by inline script before React loads) */
+html[data-authed] [data-gate] {
+  display: none;
+}
+
 ::selection {
   background: var(--color-fern);
   color: white;

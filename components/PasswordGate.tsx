@@ -30,9 +30,9 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
       {/* Always rendered so images preload behind the gate */}
       {children}
 
-      {/* Fixed overlay — removed before first paint if already authed */}
+      {/* Fixed overlay — hidden by CSS immediately for authed users before React hydrates */}
       {authed !== true && (
-        <div className="fixed inset-0 z-[9999] bg-forest flex flex-col items-center justify-center px-6">
+        <div data-gate="" className="fixed inset-0 z-[9999] bg-forest flex flex-col items-center justify-center px-6">
           <p
             className="text-cream text-5xl sm:text-6xl font-light italic mb-2"
             style={{ fontFamily: "var(--font-cormorant)" }}

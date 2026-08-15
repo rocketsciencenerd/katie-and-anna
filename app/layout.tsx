@@ -32,9 +32,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
+      {/* Runs before React hydrates — hides gate immediately for logged-in users */}
+      <script dangerouslySetInnerHTML={{ __html: `try{if(sessionStorage.getItem('ka_auth')==='1')document.documentElement.setAttribute('data-authed','')}catch(e){}` }} />
       <body className="min-h-full flex flex-col">
-          <PasswordGate>{children}</PasswordGate>
-        </body>
+        <PasswordGate>{children}</PasswordGate>
+      </body>
     </html>
   );
 }
