@@ -201,9 +201,12 @@ export default function Home() {
               don&apos;t feel any obligation beyond showing up and celebrating
               with us.
             </p>
-            <p className="text-bark/70 font-light leading-relaxed text-[15px]">
+            <p className="text-bark/70 font-light leading-relaxed text-[15px] mb-8">
               That said, if you&apos;d like to contribute something, we
               gratefully accept donations toward our wedding and travel costs.
+            </p>
+            <p className="text-bark/40 font-light text-xs tracking-wide">
+              If sending via Venmo, please select <span className="italic">Personal</span> (not &ldquo;Goods &amp; Services&rdquo;) so it&apos;s categorized correctly.
             </p>
           </div>
         </section>
