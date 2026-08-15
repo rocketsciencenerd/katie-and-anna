@@ -16,8 +16,9 @@ const photos = [
   { src: "/couple.jpeg",   alt: "Katie and Anna outside City Hall",         cols: "col-span-2 sm:col-span-1" }, // row 3 — portrait right
   { src: "/park.jpg",      alt: "Katie and Anna in the park",               cols: "col-span-2 sm:col-span-1" }, // row 4 — portrait left
   { src: "/lake.jpg",      alt: "Katie and Anna by a lake",                 cols: "col-span-2 sm:col-span-2" }, // row 4 — landscape right
-  { src: "/crosswalk.jpg", alt: "Katie and Anna crossing the street",       cols: "col-span-2 sm:col-span-2" }, // row 5 — landscape left
-  { src: "/archway.jpg",   alt: "Katie and Anna under a stone archway",     cols: "col-span-2 sm:col-span-1" }, // row 5 — portrait right
+  { src: "/crosswalk.jpg",   alt: "Katie and Anna crossing the street",        cols: "col-span-2 sm:col-span-2" }, // row 5 — landscape left
+  { src: "/archway.jpg",     alt: "Katie and Anna under a stone archway",      cols: "col-span-2 sm:col-span-1" }, // row 5 — portrait right
+  { src: "/cappadocia.jpg",  alt: "Katie and Anna in Cappadocia, Turkey",      cols: "col-span-2 sm:col-span-1" }, // row 6 — portrait left
 ];
 
 export default function GalleryGrid() {
