@@ -32,7 +32,7 @@ export default function Home() {
             style={{ minHeight: "100svh" }}
           >
             <h1
-              className="text-cream text-7xl sm:text-8xl md:text-9xl font-light italic leading-none mb-4"
+              className="text-cream text-5xl sm:text-8xl md:text-9xl font-light italic leading-none mb-4"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
               Katie&nbsp;&amp;&nbsp;Anna
@@ -47,7 +47,7 @@ export default function Home() {
             >
               August 7, 2027
             </p>
-            <p className="text-cream/65 text-sm font-light tracking-widest uppercase mt-2">
+            <p className="text-cream/65 text-sm font-light tracking-wide sm:tracking-widest uppercase mt-2">
               Como Park Conservatory · Saint Paul, MN
             </p>
           </div>
@@ -233,7 +233,7 @@ export default function Home() {
           >
             Katie &amp; Anna
           </p>
-          <p className="text-xs tracking-widest uppercase">
+          <p className="text-xs tracking-wide sm:tracking-widest uppercase">
             August 7, 2027 · Como Park Conservatory · Saint Paul, MN
           </p>
         </footer>
