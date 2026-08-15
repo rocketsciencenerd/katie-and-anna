@@ -37,7 +37,7 @@ export default function RSVPForm() {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "lookup", name: nameInput.trim() }),
+        body: JSON.stringify({ type: "lookup", name: nameInput.trim().replace(/\s+/g, " ") }),
       });
       const data = await res.json();
       if (!data.found) {
