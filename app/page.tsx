@@ -171,8 +171,7 @@ export default function Home() {
               <p className="text-bark/65 text-sm font-light leading-relaxed">
                 Como Park is easy to reach by car — free parking at the
                 Conservatory. Lyft and Uber are widely available from downtown
-                Saint Paul and Minneapolis. We&apos;ll share any shuttle
-                arrangements closer to the date.
+                Saint Paul and Minneapolis.
               </p>
             </div>
           </div>
